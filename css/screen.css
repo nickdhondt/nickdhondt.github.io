@@ -176,6 +176,13 @@ main > div:not(:first-child) > div:first-child {
 @media screen and (max-width: 640px){
     nav {
         margin: 1em 0;
+        padding: .5em;
+        width: calc(100% - 1em);
+        
+    }
+
+    nav li {
+        margin-right: .5em;
     }
 
     #compact {
