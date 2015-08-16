@@ -28,9 +28,10 @@ nav ul::after, nav::after {
 
 header {
     width: 100%;
-    position: absolute;
+    position: fixed;
     z-index: 1;
-    background: linear-gradient(to bottom, rgba(0,0,0,.6), transparent);
+    background: linear-gradient(to bottom, rgba(0,0,0,.85), transparent);
+    pointer-events: none;
 }
 
 nav {
@@ -40,11 +41,16 @@ nav {
     margin: 2em 0 4em 0;
     font-family: "Slabo 27px", serif;
     font-size: 1.2em;
+    transition: margin .5s ease;
+}
+
+#compact {
+    margin: 0;
 }
 
 nav ul {
     float: right;
-    text-shadow: 0 5px 1px rgba(0,0,0,.6);
+    text-shadow: 0 5px 1px rgba(0,0,0,.85);
 }
 
 nav li {
@@ -52,6 +58,7 @@ nav li {
     padding: .5em;
     margin-right: 1em;
     cursor: pointer;
+    pointer-events: all;
 }
 
 nav li:hover {
@@ -60,53 +67,62 @@ nav li:hover {
 
 /* Main */
 
+main > div {
+    min-height: calc(100vh - 2em);
+    width: calc(100% - 2em);
+    position: relative;
+    display: flex;
+    padding: 1em;
+}
+
 #lander {
     background: url("../img/background.jpg") no-repeat center center;
     background-size: cover;
-    height: 100vh;
-    width: 100%;
-    position: relative;
-    display: flex;
     color: #fff;
 }
 
 #lander::before {
+    background: rgba(0,0,0,.2) url("../img/noise.png");
+}
+
+main > div > div:first-child {
+    z-index: 1;
+    margin: auto;
+    font-weight: lighter;
+    text-shadow: 0 5px 1px rgba(0,0,0,.6);
+    text-align: center;
+}
+
+main > div::before {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
     content: "";
-    background: rgba(0,0,0,.2) url("../img/noise.png");
     z-index: 0;
 }
 
 #lander > div:first-child {
-    position: relative;
-    z-index: 1;
-    margin: auto;
-    text-shadow: 0 5px 1px rgba(0,0,0,.6);
-    text-align: center;
-    font-weight: lighter;
     max-width: 500px;
 }
 
-#lander h1 {
+main > div h1, main > div h2     {
     font-weight: inherit;
     text-transform: uppercase;
     font-size: 3em;
     margin-bottom: .5em;
 }
 
-#lander p {
+main > div p {
     margin-bottom: 1em;
 }
 
-#lander p:last-of-type {
+main > div p:last-of-type {
     margin-bottom: 0;
 }
 
-#lander > div:last-child {
+main > div > div:last-child {
     background: url("../img/down_arrow.svg") no-repeat center;
     position: absolute;
     bottom: 50px;
@@ -118,10 +134,66 @@ nav li:hover {
     cursor: pointer;
 }
 
-#lander > div:last-child:hover {
+main > div > div:last-child:hover {
     bottom: 35px;
 }
 
-#lander > div:last-child:active {
+main > div > div:last-child:active {
     bottom: 28px;
+}
+
+#projects {
+    background: url("../img/background2.jpg") no-repeat center center;
+    background-size: cover;
+    color: #fff;
+}
+
+#projects::before {
+    background: rgba(112, 89, 55, 0.95);
+}
+
+#skills {
+    background: url("../img/background3.jpg") no-repeat center center;
+    background-size: cover;
+}
+
+main > div:not(:first-child) > div:first-child {
+    max-width: 960px;
+}
+
+#skills::before {
+    background: rgba(255, 220, 197, .95);
+}
+
+#skills > div:last-child {
+    background-image: url("../img/down_arrow_black.svg");
+}
+
+#skills > div:first-child {
+    text-shadow: 0 5px 1px rgba(0,0,0,.25);
+}
+
+@media screen and (max-width: 640px){
+    nav {
+        margin: 1em 0;
+    }
+
+    #compact {
+        margin: 0;
+    }
+
+    main > div > div:last-child {
+        bottom: 25px;
+        left: calc(50vw - 25px);
+        height: 50px;
+        width: 50px;
+    }
+
+    main > div > div:last-child:hover {
+        bottom: 18px;
+    }
+
+    main > div > div:last-child:active {
+        bottom: 13px;
+    }
 }
