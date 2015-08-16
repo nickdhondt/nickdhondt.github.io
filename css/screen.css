@@ -81,13 +81,14 @@ nav li:hover {
     z-index: 0;
 }
 
-#lander > div {
+#lander > div:first-child {
     position: relative;
     z-index: 1;
     margin: auto;
     text-shadow: 0 5px 1px rgba(0,0,0,.6);
     text-align: center;
     font-weight: lighter;
+    max-width: 500px;
 }
 
 #lander h1 {
@@ -95,4 +96,32 @@ nav li:hover {
     text-transform: uppercase;
     font-size: 3em;
     margin-bottom: .5em;
+}
+
+#lander p {
+    margin-bottom: 1em;
+}
+
+#lander p:last-of-type {
+    margin-bottom: 0;
+}
+
+#lander > div:last-child {
+    background: url("../img/down_arrow.svg") no-repeat center;
+    position: absolute;
+    bottom: 50px;
+    left: calc(50vw - 40px);
+    margin: 0 auto;
+    height: 80px;
+    width: 80px;
+    transition: bottom .2s ease;
+    cursor: pointer;
+}
+
+#lander > div:last-child:hover {
+    bottom: 35px;
+}
+
+#lander > div:last-child:active {
+    bottom: 28px;
 }
