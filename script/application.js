@@ -53,47 +53,6 @@ application = {
         });
     },
     scrollTo: function(sectionName) {
-        clearInterval(application.interval);
-
-        var section = document.getElementById(application.sectionIndex[sectionName][0]);
-        var sectionAbove;
-        var spaceAbove = 0;
-
-        for(var sectionNameAbove in application.sectionIndex) {
-            if (application.sectionIndex.hasOwnProperty(sectionNameAbove)) {
-                if (sectionNameAbove === sectionName) break;
-                else {
-                    sectionAbove = document.getElementById(application.sectionIndex[sectionNameAbove][0]);
-                    spaceAbove += sectionAbove.offsetHeight;
-                }
-            }
-        }
-
-        var step = 0;
-        var moved = window.scrollY;
-
-        application.interval = setInterval(function(){
-            step += 1;
-
-            if (spaceAbove - window.scrollY > 0) {
-                moved += step;
-
-                if (moved > spaceAbove) {
-                    moved = spaceAbove;
-                    clearInterval(application.interval);
-                }
-
-                window.scroll(0, moved)
-            } else {
-                moved -= step;
-
-                if (moved < spaceAbove) {
-                    moved = spaceAbove;
-                    clearInterval(application.interval);
-                }
-
-                window.scroll(0, moved)
-            }
-        }, 17);
+        window.smoothScroll(document.getElementById(application.sectionIndex[sectionName][0]), 1000);
     }
 };
