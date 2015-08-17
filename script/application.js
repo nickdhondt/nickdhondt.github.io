@@ -9,7 +9,8 @@ application = {
     sectionIndex: {
         lander: ["lander"],
         projects: ["projects"],
-        skills: ["skills"]
+        skills: ["skills"],
+        contact: ["contact"]
     },
     init: function() {
         var landingRef = document.getElementsByClassName("lander_ref");
@@ -25,6 +26,11 @@ application = {
         var skillsRef = document.getElementsByClassName("skills_ref");
         for(var k = 0; k < skillsRef.length; k++) {
             skillsRef[k].addEventListener("click", function(){application.scrollTo("skills")});
+        }
+
+        var contactRef = document.getElementsByClassName("contact_ref");
+        for(var m = 0; m < contactRef.length; m++) {
+            contactRef[m].addEventListener("click", function(){application.scrollTo("contact")});
         }
 
         application.scrollNav();

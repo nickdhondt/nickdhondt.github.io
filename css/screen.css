@@ -29,7 +29,7 @@ nav ul::after, nav::after {
 header {
     width: 100%;
     position: fixed;
-    z-index: 1;
+    z-index: 999;
     background: linear-gradient(to bottom, rgba(0,0,0,.85), transparent);
     pointer-events: none;
 }
@@ -122,7 +122,7 @@ main > div p:last-of-type {
     margin-bottom: 0;
 }
 
-main > div > div:last-child {
+main > div > div:last-child:not(:first-child) {
     background: url("../img/down_arrow.svg") no-repeat center;
     position: absolute;
     bottom: 50px;
@@ -134,11 +134,11 @@ main > div > div:last-child {
     cursor: pointer;
 }
 
-main > div > div:last-child:hover {
+main > div > div:last-child:not(:first-child):hover {
     bottom: 35px;
 }
 
-main > div > div:last-child:active {
+main > div > div:last-child:not(:first-child):active {
     bottom: 28px;
 }
 
@@ -173,12 +173,22 @@ main > div:not(:first-child) > div:first-child {
     text-shadow: 0 5px 1px rgba(0,0,0,.25);
 }
 
+#contact {
+    background: url("../img/background4.jpg") no-repeat center center;
+    background-size: cover;
+    color: #fff;
+}
+
+#contact::before {
+    background: rgba(112, 89, 55, 0.95);
+}
+
 @media screen and (max-width: 640px){
     nav {
         margin: 1em 0;
         padding: .5em;
         width: calc(100% - 1em);
-        
+
     }
 
     nav li {
@@ -189,18 +199,18 @@ main > div:not(:first-child) > div:first-child {
         margin: 0;
     }
 
-    main > div > div:last-child {
+    main > div > div:last-child:not(:first-child) {
         bottom: 25px;
         left: calc(50vw - 25px);
         height: 50px;
         width: 50px;
     }
 
-    main > div > div:last-child:hover {
+    main > div > div:last-child:not(:first-child):hover {
         bottom: 18px;
     }
 
-    main > div > div:last-child:active {
+    main > div > div:last-child:not(:first-child):active {
         bottom: 13px;
     }
 }
