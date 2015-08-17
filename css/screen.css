@@ -159,6 +159,7 @@ main > div > div:last-child:not(:first-child):active {
 }
 
 main > div:not(:first-child) > div:first-child {
+    width: 65%;
     max-width: 960px;
 }
 
@@ -184,6 +185,12 @@ main > div:not(:first-child) > div:first-child {
     background: rgba(112, 89, 55, 0.95);
 }
 
+@media screen and (max-width: 960px) {
+    main > div:not(:first-child) > div:first-child {
+        width: 80%;
+    }
+}
+
 @media screen and (max-width: 640px){
     nav {
         margin: 1em 0;
@@ -198,6 +205,14 @@ main > div:not(:first-child) > div:first-child {
 
     #compact {
         margin: 0;
+    }
+
+    main > div:not(:first-child) > div:first-child {
+        width: auto;
+    }
+
+    main > div:not(:first-child) > div:first-child {
+        width: auto;
     }
 
     main > div > div:last-child:not(:first-child) {
