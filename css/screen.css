@@ -24,6 +24,28 @@ nav ul::after, nav::after {
     height: 0;
 }
 
+::-moz-selection {
+    text-shadow: 1px 1px #cdcdcd, 2px 2px #cdcdcd, 3px 3px #cdcdcd;
+}
+
+h1::-moz-selection, h2::-moz-selection {
+    text-shadow: 1px 1px #cdcdcd, 2px 2px #cdcdcd, 3px 3px #cdcdcd,
+    4px 4px #cdcdcd, 5px 5px #cdcdcd, 6px 6px #cdcdcd;
+}
+
+#skills ::-moz-selection {
+    text-shadow: 1px 1px #646464, 2px 2px #646464, 3px 3px #646464;
+}
+
+#skills h2::-moz-selection {
+    text-shadow: 1px 1px #646464, 2px 2px #646464, 3px 3px #646464,
+    4px 4px #646464, 5px 5px #646464, 6px 6px #646464;
+}
+
+::selection {
+    background: yellow;
+}
+
 /* Header */
 
 header {
