@@ -105,6 +105,9 @@ main > div::before {
 
 #lander > div:first-child {
     max-width: 500px;
+}
+
+#lander > div:first-child > h1, #lander > div:first-child > p {
     opacity: 0;
 }
 

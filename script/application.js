@@ -37,9 +37,15 @@ application = {
         application.transition();
     },
     transition: function() {
-        document.getElementById("lander").firstElementChild.style.transition = "opacity 2s ease";
-        document.getElementById("lander").firstElementChild.style.opacity = "0";
-        setTimeout(function(){document.getElementById("lander").firstElementChild.style.opacity = "1";}, 1);
+        document.getElementById("lander").firstElementChild.childNodes[1].style.transition = "opacity 2s ease";
+        document.getElementById("lander").firstElementChild.childNodes[3].style.transition = "opacity 2s ease";
+        document.getElementById("lander").firstElementChild.childNodes[5].style.transition = "opacity 2s ease";
+        document.getElementById("lander").firstElementChild.childNodes[1].style.opacity = "0";
+        document.getElementById("lander").firstElementChild.childNodes[3].style.opacity = "0";
+        document.getElementById("lander").firstElementChild.childNodes[5].style.opacity = "0";
+        setTimeout(function(){document.getElementById("lander").firstElementChild.childNodes[1].style.opacity = "1";}, 500);
+        setTimeout(function(){document.getElementById("lander").firstElementChild.childNodes[3].style.opacity = "1";}, 1500);
+        setTimeout(function(){document.getElementById("lander").firstElementChild.childNodes[5].style.opacity = "1";}, 2500);
     },
     scrollNav: function() {
         var nav = document.getElementsByTagName("nav")[0];
