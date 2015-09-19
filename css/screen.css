@@ -42,10 +42,6 @@ h1::-moz-selection, h2::-moz-selection {
     4px 4px #646464, 5px 5px #646464, 6px 6px #646464;
 }
 
-::selection {
-    background: yellow;
-}
-
 /* Header */
 
 header {
