@@ -12,6 +12,11 @@ application = {
         skills: ["skills"],
         contact: ["contact"]
     },
+    canvasIndex: {
+        firstProject: ["first_project_canvas"],
+        secondProject: ["second_project_canvas"],
+        thirdProject: ["third_project_canvas"]
+    },
     init: function() {
         var landingRef = document.getElementsByClassName("lander_ref");
         for(var i = 0; i < landingRef.length; i++) {
@@ -33,19 +38,36 @@ application = {
             contactRef[m].addEventListener("click", function(){application.scrollTo("contact")});
         }
 
+        document.getElementById("first_project_ref").addEventListener("click", function(){application.showCanvas("firstProject")});
+        document.getElementById("second_project_ref").addEventListener("click", function(){application.showCanvas("secondProject")});
+        document.getElementById("third_project_ref").addEventListener("click", function(){application.showCanvas("thirdProject")});
+        document.getElementById("canvas").addEventListener("click", function(){application.hideCanvas()});
+
+        application.preventCanvasEvents();
         application.scrollNav();
         application.transition();
     },
+    preventCanvasEvents: function() {
+        var canvasElements = document.getElementById("canvas").children;
+
+        for(var i = 0; i < canvasElements.length; i++) {
+            canvasElements[i].children[0].addEventListener("click", function(e){e.stopPropagation()});
+        }
+    },
+    showCanvas: function(canvas) {
+        document.getElementById(application.canvasIndex[canvas][0]).className = "visible";
+    },
+    hideCanvas: function(canvas) {
+        for(var object in application.canvasIndex) {
+            if (application.canvasIndex.hasOwnProperty(object)) {
+                document.getElementById(application.canvasIndex[object][0]).className = "invisible";
+            }
+        }
+    },
     transition: function() {
-        document.getElementById("lander").firstElementChild.childNodes[1].style.transition = "opacity 2s ease";
-        document.getElementById("lander").firstElementChild.childNodes[3].style.transition = "opacity 2s ease";
-        document.getElementById("lander").firstElementChild.childNodes[5].style.transition = "opacity 2s ease";
-        document.getElementById("lander").firstElementChild.childNodes[1].style.opacity = "0";
-        document.getElementById("lander").firstElementChild.childNodes[3].style.opacity = "0";
-        document.getElementById("lander").firstElementChild.childNodes[5].style.opacity = "0";
-        setTimeout(function(){document.getElementById("lander").firstElementChild.childNodes[1].style.opacity = "1";}, 500);
-        setTimeout(function(){document.getElementById("lander").firstElementChild.childNodes[3].style.opacity = "1";}, 1500);
-        setTimeout(function(){document.getElementById("lander").firstElementChild.childNodes[5].style.opacity = "1";}, 2500);
+        setTimeout(function(){document.getElementById("lander").firstElementChild.childNodes[1].className = "opaque";}, 500);
+        setTimeout(function(){document.getElementById("lander").firstElementChild.childNodes[3].className = "opaque";}, 1500);
+        setTimeout(function(){document.getElementById("lander").firstElementChild.childNodes[5].className = "opaque";}, 2500);
     },
     scrollNav: function() {
         var nav = document.getElementsByTagName("nav")[0];
