@@ -38,14 +38,17 @@ application = {
             contactRef[m].addEventListener("click", function(){application.scrollTo("contact")});
         }
 
-        document.getElementById("first_project_ref").addEventListener("click", function(){application.showCanvas("firstProject")});
-        document.getElementById("second_project_ref").addEventListener("click", function(){application.showCanvas("secondProject")});
-        document.getElementById("third_project_ref").addEventListener("click", function(){application.showCanvas("thirdProject")});
+        document.getElementById("first_project_ref").addEventListener("click", function(){application.showCanvas("firstProject"); application.closeEvent("firstProject")});
+        document.getElementById("second_project_ref").addEventListener("click", function(){application.showCanvas("secondProject"); application.closeEvent("secondProject")});
+        document.getElementById("third_project_ref").addEventListener("click", function(){application.showCanvas("thirdProject"); application.closeEvent("thirdProject")});
         document.getElementById("canvas").addEventListener("click", function(){application.hideCanvas()});
 
         application.preventCanvasEvents();
         application.scrollNav();
         application.transition();
+    },
+    closeEvent: function(canvas) {
+        document.getElementById(application.canvasIndex[canvas][0]).children[0].children[0].addEventListener("click", function(){application.hideCanvas()});
     },
     preventCanvasEvents: function() {
         var canvasElements = document.getElementById("canvas").children;
@@ -66,8 +69,8 @@ application = {
     },
     transition: function() {
         setTimeout(function(){document.getElementById("lander").firstElementChild.childNodes[1].className = "opaque";}, 500);
-        setTimeout(function(){document.getElementById("lander").firstElementChild.childNodes[3].className = "opaque";}, 1500);
-        setTimeout(function(){document.getElementById("lander").firstElementChild.childNodes[5].className = "opaque";}, 2500);
+        setTimeout(function(){document.getElementById("lander").firstElementChild.childNodes[3].className = "opaque";}, 2500);
+        setTimeout(function(){document.getElementById("lander").firstElementChild.childNodes[5].className = "opaque";}, 4500);
     },
     scrollNav: function() {
         var nav = document.getElementsByTagName("nav")[0];
