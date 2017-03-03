@@ -116,12 +116,12 @@ nav a, nav a:hover, nav a:focus {
     color: #416987;
 }
 
-main h1, main h2 {
+.section-head {
     font-weight: lighter;
     color: #416987;
 }
 
-main h1:before, main h2:before {
+.section-head:before {
     content: "";
     width: 0.5em;
     height: 1em;
@@ -138,11 +138,11 @@ main h1:before, main h2:before {
 
 .attention {
     background: #416987;
+    color: #fff;
 }
 
 .showcase-item {
     padding: 2rem;
-    color: #fff;
     overflow: hidden;
     position: relative;
 }
@@ -154,6 +154,13 @@ main h1:before, main h2:before {
     text-transform: uppercase;
     font-weight: lighter;
     font-size: .8em;
+    z-index: 2;
+    transition: top .5s, right .5s;
+}
+
+.showcase-hidden:hover + .showcase-label, .showcase-label:hover {
+    right: 0;
+    top: 1rem;
 }
 
 .website {
@@ -174,6 +181,7 @@ main h1:before, main h2:before {
     height: 100%;
     transition: opacity .33s;
     padding: 1rem;
+    z-index: 1;
 }
 
 .showcase-item:hover .showcase-hidden {
@@ -205,10 +213,6 @@ main h1:before, main h2:before {
 }
 
 @media screen and (min-width: 768px) {
-    nav li {
-        width: 25%;
-    }
-
     .title {
         width: 20%;
     }
