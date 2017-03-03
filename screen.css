@@ -209,10 +209,12 @@ main h1:before, main h2:before {
 
     .title {
         width: 20%;
+        border-bottom: none;
     }
 
     nav {
         width: 80%;
+        height: auto;
     }
 
     .indicator {
