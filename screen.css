@@ -1,0 +1,101 @@
+html, body {
+    height: 100%;
+}
+
+header {
+    flex: 0 1 auto;
+}
+
+header a {
+    position: relative;
+    z-index: 999;
+}
+
+body > main {
+    flex: 1 1 auto;
+    overflow: hidden;
+}
+
+.flex-reset {
+    flex: 1 1 auto;
+    position: relative;
+}
+
+.section {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    transition: left 1s cubic-bezier(0.770, 0.000, 0.175, 1.000);
+    background: #eee;
+}
+
+#helloSection {left: 0}
+#skillsSection {left: 100%}
+#showcaseSection {left: 200%}
+#contactSection {left: 300%}
+
+.indicator {
+    width: 20%;
+    height: 100%;
+    left: 20%;
+    position: absolute;
+    z-index: 998;
+    transition: left 1s cubic-bezier(0.770, 0.000, 0.175, 1.000), background 1s cubic-bezier(0.770, 0.000, 0.175, 1.000);
+    background: #416987;
+    padding-bottom: .45rem;
+}
+
+.indicator-line {
+    border-bottom: 1px solid #fff;
+    height: 100%;
+    width: 45px;
+    transition: width 1s cubic-bezier(0.770, 0.000, 0.175, 1.000), background 1s cubic-bezier(0.770, 0.000, 0.175, 1.000);
+}
+
+nav {
+    font-weight: lighter;
+    text-transform: uppercase;
+}
+
+.title h1 {
+    /*border-bottom: 1px ridge #416987;*/
+    font-size: 1rem;
+    font-weight: lighter;
+}
+
+nav li {
+    width: 20%;
+}
+
+nav li div {
+    background: #417A74;
+}
+
+nav li div:hover {
+    background: #356b65;
+}
+
+nav a, nav a:hover, nav a:focus {
+    color: #fff;
+    text-decoration: none;
+}
+
+.title {
+    background: #eee;
+    color: #416987;
+}
+
+main h1, main h2 {
+    font-weight: lighter;
+    color: #416987;
+}
+
+main h1:before, main h2:before {
+    content: "";
+    width: 0.5em;
+    height: 1em;
+    margin-right: .1em;
+    display: inline-block;
+    background: #416987;
+}

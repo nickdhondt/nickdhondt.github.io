@@ -2,107 +2,75 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Nick D'hondt - Portfolio</title>
-    <link rel="stylesheet" href="css/screen.css">
-    <script src="script/smoothscroll.min.js"></script>
-    <script src="script/application.js"></script>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Nick D'hondt</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+    <link rel="stylesheet" href="screen.css">
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <script src="jquery.mousewheel.min.js"></script>
 </head>
-<body>
-<header>
-    <nav>
-        <ul>
-            <li class="lander_ref">
-                <div>Home</div>
+<body class="d-flex flex-column align-items-stretch">
+<header class="container-fluid p-0 w-100">
+    <div class="indicator" id="indicator"><div class="mx-auto indicator-line" id="indicator-line"></div></div>
+    <nav class="d-flex flex-row text-center">
+        <ul class="list-unstyled d-flex flex-row m-0 w-100">
+            <li class="title pt-2 d-block">
+                <h1 class="m-0 d-inline">Nick D'hondt</h1>
             </li>
-            <li class="projects_ref">
-              <div>Projects</div>
+            <li>
+                <div>
+                    <a href="#" class="p-2 d-block" id="helloLink"><span>Hello</span></a>
+                </div>
             </li>
-            <li class="skills_ref">
-                <div>Skills</div>
+            <li>
+                <div>
+                    <a href="#" class="p-2 d-block" id="skillsLink"><span>Skills</span></a>
+                </div>
             </li>
-            <li class="contact_ref">
-                <div>Contact</div>
+            <li>
+                <div>
+                    <a href="#" class="p-2 d-block" id="showcaseLink"><span>Showcase</span></a>
+                </div>
+            </li>
+            <li>
+                <div>
+                    <a href="#" class="p-2 d-block" id="contactLink"><span>Contact</span></a>
+                </div>
             </li>
         </ul>
     </nav>
 </header>
-<main>
-    <div id="lander">
-        <div>
-            <h1 class="transparent">Nick D'hondt</h1>
-            <p class="transparent">Web developer &mdash; Programmer &mdash; Designer</p>
-            <p class="transparent">My name is Nick D'hondt.</p>
-        </div>
-        <div class="projects_ref"></div>
-    </div>
-    <div id="projects">
-        <div>
-            <h2>Projects</h2>
-            <p>These are a few of the projects I've worked on lately.</p>
-            <ul class="items">
-                <li id="first_project_ref">
-                    <div>
-                        <h3>Jeukiboek Shop</h3>
-                        <p>A small shop for the local bookstore</p>
-                    </div>
-                </li>
-                <li id="second_project_ref">
-                    <div>
-                        <h3>Maison Minervois</h3>
-                        <p>An informational site for a holiday home.</p>
-                    </div>
-                </li>
-                <li id="third_project_ref">
-                    <div>
-                        <h3>Your project here?</h3>
-                        <p>I'd like to help you out with your project.</p>
-                    </div>
-                </li>
-            </ul>
-        </div>
-        <div class="skills_ref"></div>
-    </div>
-    <div id="skills">
-        <div>
-            <h2>Skills</h2>
-            <p>Lorem ipsum dolor sit amet, quisque voluptatem. Maecenas eget, dictum sociosqu viverra. Eget massa penatibus, sed sed fames, in ipsum nibh. Odio quis. Quis deserunt egestas, viverra nec. Aliquet consectetuer gravida, in fermentum, nibh aliquam.</p>
-            <p>Amet pulvinar pulvinar. Quisque class vel. Nisl aliquam sed, diam sapien bibendum. Sodales ligula sed, proin duis, nulla hac. Convallis integer, sed dui suspendisse. Lorem felis nec, pharetra parturient leo.</p>
-            <p>Amet risus iaculis. In a, pede pellentesque eleifend, pellentesque lacinia. Imperdiet pulvinar, et suspendisse convallis, consequat et laoreet. Mauris dapibus, quisque mattis hic, porttitor at. Nec nulla, sit vitae. Maecenas felis, ut nec.</p>
-        </div>
-        <div class="contact_ref"></div>
-    </div>
-    <div id="contact">
-        <div>
-            <h2>Contact</h2>
-            <p>Litora eget. Wisi neque, enim quisque, autem ante. Vitae dictum, non wisi nibh, aliquet mattis. Ac lacinia, ipsa nec parturient. Nisl fames quam, turpis quam facilisis, in nulla.</p>
-            <p>Sed eros. Nunc egestas, pede erat, ac turpis. Sociosqu sit, urna accumsan taciti. Elit etiam, duis ligula tellus, faucibus in lacus. Suscipit nullam euismod, sit urna vestibulum. Lorem tristique aliquam.</p>
-            <p>Scelerisque sodales orci, incididunt arcu. Laoreet dui, neque erat, orci mauris. Maecenas amet, ad eget. Pretium natoque duis, nascetur ultricies, duis lacus. Justo pretium.</p>
-        </div>
+<main class="d-flex">
+    <div class="flex-reset">
+        <section class="section" id="helloSection">
+            <div class="container py-5">
+                <h1>Hello</h1>
+            </div>
+        </section>
+        <section class="section" id="skillsSection">
+            <div class="container py-5">
+                <h1>Skills</h1>
+            </div>
+        </section>
+        <section class="section" id="showcaseSection">
+            <div class="container py-5">
+                <h1>Showcase</h1>
+            </div>
+        </section>
+        <section class="section" id="contactSection">
+            <div class="container py-5">
+                <h1>Contact</h1>
+                <ul class="list-unstyled">
+                    <li>E-mail: nick.dhondt38@gmail.com</li>
+                    <li>Phone: +32 477 39 19 82</li>
+                    <li>Address: Achiel Rommelplein 6</li>
+                    <li>City: 8210 Zedelgem</li>
+                </ul>
+            </div>
+        </section>
     </div>
 </main>
-<div id="canvas">
-    <div id="first_project_canvas" class="invisible">
-        <div>
-            <div class="close"></div>
-            <h3>Jeukiboek Shop</h3>
-            <p>Currently no information available.</p>
-        </div>
-    </div>
-    <div id="second_project_canvas" class="invisible">
-        <div>
-            <div class="close"></div>
-            <h3>Maison Minervois</h3>
-            <p>Currently no information available.</p>
-        </div>
-    </div>
-    <div id="third_project_canvas" class="invisible">
-        <div>
-            <div class="close"></div>
-            <h3>Your project here?</h3>
-            <p>Want me to create your website? Contact me. Contact information below.</p>
-        </div>
-    </div>
-</div>
+<script src="app.js"></script>
 </body>
 </html>
