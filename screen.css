@@ -5,6 +5,7 @@ html, body {
 
 header {
     flex: 0 1 auto;
+    border-bottom: 1px solid #416987;
 }
 
 header a {
@@ -74,17 +75,18 @@ nav {
     text-transform: uppercase;
     width: 100%;
     position: relative;
-    height: 0;
+    max-height: 0;
     overflow: hidden;
+    transition: max-height .5s;
 }
 
 .nav-open {
     height: auto;
+    max-height: 165px;
 }
 
 .title {
     width: 100%;
-    border-bottom: 1px solid #416987;
 }
 
 .title h1 {
@@ -209,12 +211,16 @@ main h1:before, main h2:before {
 
     .title {
         width: 20%;
-        border-bottom: none;
     }
 
     nav {
         width: 80%;
         height: auto;
+        max-height: 45px;
+    }
+
+    header {
+        border-bottom: none;
     }
 
     .indicator {
