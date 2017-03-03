@@ -21,18 +21,15 @@ $(document).mousewheel(function(event) {
 });
 
 sectionsList.forEach(function (linkData, index) {
+    var altIndex = index;
     index++;
     $(linkData[1]).click(function () {
         prevSection = index;
-        sectionsList.forEach(function (data, i) {
-            i++;
-            if (index > i) $(data[0]).css("left", -100 * (index - i) + "%");
-            else $(data[0]).css("left", 100 * (i - index) + "%");
-        });
 
         $("#indicator").css("left", (index) * 20 + "%");
         $("#indicator-line").css("width", $(this).children().first().width() + "px");
 
-        $(linkData[0]).css("left", "0");
+
+        $("#sectionHandle").css("left", altIndex * -100 + "%");
     })
 });

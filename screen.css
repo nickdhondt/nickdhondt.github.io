@@ -1,5 +1,6 @@
 html, body {
     height: 100%;
+    background: #eee;
 }
 
 header {
@@ -19,6 +20,8 @@ body > main {
 .flex-reset {
     flex: 1 1 auto;
     position: relative;
+    left: 0;
+    transition: left 1s cubic-bezier(0.770, 0.000, 0.175, 1.000);
 }
 
 .section {
