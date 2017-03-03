@@ -34,10 +34,21 @@ body > main {
     overflow-y: auto;
 }
 
-#helloSection {left: 0}
-#skillsSection {left: 100%}
-#showcaseSection {left: 200%}
-#contactSection {left: 300%}
+#helloSection {
+    left: 0
+}
+
+#skillsSection {
+    left: 100%
+}
+
+#showcaseSection {
+    left: 200%
+}
+
+#contactSection {
+    left: 300%
+}
 
 .indicator {
     width: 20%;
@@ -111,6 +122,44 @@ main h1:before, main h2:before {
 
 .showcase-block {
     background: #416987;
+}
+
+.showcase-item {
+    padding: 2rem;
+    color: #fff;
+    overflow: hidden;
+    position: relative;
+    background: rgba(255,255,255,.1);
+}
+
+.showcase-hidden {
+    background: rgba(0, 0, 0, .7);
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transition: opacity .33s;
+    padding: 1rem;
+}
+
+.showcase-item:hover .showcase-hidden {
+    opacity: 1;
+}
+
+.showcase-body {
+    padding: 1rem;
+}
+
+.showcase-item h2 {
+    font-size: 1rem;
+    color: #fff;
+    font-weight: normal;
+}
+
+.showcase-item h2:before {
+    display: none;
 }
 
 @media screen and (min-width: 768px) {
