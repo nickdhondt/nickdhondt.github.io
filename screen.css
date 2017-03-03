@@ -120,7 +120,7 @@ main h1:before, main h2:before {
     border-radius: 5rem;
 }
 
-.showcase-block {
+.attention {
     background: #416987;
 }
 
@@ -129,7 +129,22 @@ main h1:before, main h2:before {
     color: #fff;
     overflow: hidden;
     position: relative;
-    background: rgba(255,255,255,.1);
+}
+
+.showcase-label {
+    position: absolute;
+    top: 3rem;
+    right: 1rem;
+    text-transform: uppercase;
+    font-weight: lighter;
+}
+
+.website {
+    background: #417A74;
+}
+
+.web-app {
+    background: #418758;
 }
 
 .showcase-hidden {
@@ -149,13 +164,23 @@ main h1:before, main h2:before {
 }
 
 .showcase-body {
-    padding: 1rem;
+    margin-top: 1rem;
+}
+
+.showcase-body p {
+    font-size: .8em;
+    margin-bottom: .15rem;
+}
+
+.showcase-body p:last-child {
+    margin: 0;
 }
 
 .showcase-item h2 {
     font-size: 1rem;
     color: #fff;
     font-weight: normal;
+    margin-bottom: 1rem;
 }
 
 .showcase-item h2:before {
