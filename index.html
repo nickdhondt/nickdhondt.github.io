@@ -11,13 +11,13 @@
     <script src="jquery.mousewheel.min.js"></script>
 </head>
 <body class="d-flex flex-column align-items-stretch">
-<header class="container-fluid p-0 w-100">
-    <div class="indicator" id="indicator"><div class="mx-auto indicator-line" id="indicator-line"></div></div>
-    <nav class="d-flex flex-row text-center">
+<header class="container-fluid p-0 w-100 d-md-flex flex-row">
+    <div class="title p-2 text-center" id="toggleNav">
+        <h1 class="m-0 d-inline"><strong>Nick</strong> D'hondt</h1>
+    </div>
+    <nav class="text-center">
+        <div class="indicator" id="indicator"><div class="mx-auto indicator-line" id="indicator-line"></div></div>
         <ul class="list-unstyled d-md-flex flex-row m-0 w-100">
-            <li class="title p-2 d-block">
-                <h1 class="m-0 d-inline"><strong>Nick</strong> D'hondt</h1>
-            </li>
             <li>
                 <div>
                     <a href="#" class="p-2 d-block" id="helloLink"><span>Hello</span></a>
@@ -65,8 +65,8 @@
                 <h1>Skills</h1>
             </div>
         </section>
-        <section class="section my-5" id="showcaseSection">
-            <div class="container">
+        <section class="section" id="showcaseSection">
+            <div class="container mt-5">
                 <h1>Showcase</h1>
             </div>
             <div class="my-5 attention">

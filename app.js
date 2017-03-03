@@ -21,15 +21,21 @@ var mq = window.matchMedia("(min-width: 768px)");
 //     }
 // });
 
-if (mq.matches) {
-
-}
+$("#toggleNav").click(function () {
+    var nav = $("nav").first();
+    if (nav.hasClass("nav-open")) nav.removeClass("nav-open");
+    else nav.addClass("nav-open");
+});
 
 sectionsList.forEach(function (linkData, index) {
     $(linkData[1]).click(function () {
         prevSection = index;
 
-        $("#indicator").css("left", (index + 1) * 20 + "%");
+        if (mq.matches) {
+            $("#indicator").css("left", index * 25 + "%");
+        } else {
+            $("#indicator").css("top", index * 25 + "%");
+        }
         $("#indicator-line").css("width", $(this).children().first().width() + "px");
         $("#sectionHandle").css("left", index * -100 + "%");
     })
