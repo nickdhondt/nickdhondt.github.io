@@ -1,8 +1,8 @@
 {
   "name": "Portfolio Nick D'hondt",
   "short_name": "Portfolio Nick D'hondt",
-  "theme_color": "#416987",
-  "background_color": "#2196f3",
+  "theme_color": "#417A74",
+  "background_color": "#417A74",
   "display": "standalone",
   "Scope": "/",
   "start_url": "/",
