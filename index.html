@@ -13,6 +13,34 @@
     <script src="jquery.mousewheel.min.js"></script>
 </head>
 <body class="d-flex flex-column align-items-stretch">
+<div class="details details--hidden details--small" id="detailsContainer">
+    <div class="details__container">
+        <div class="container detail detail--hidden" id="luckyMealDetail">
+            <h1>Lucky Meal</h1>
+            <a href="http://student.howest.be/nick.dhondt/luckymeal/" target="_blank">Link</a>
+        </div>
+        <div class="container detail detail--hidden" id="roomDetail">
+            <h1>The Room viewer's guide</h1>
+            <a href="https://theroomviewersguide.cf/" target="_blank">Link</a>
+        </div>
+        <div class="container detail detail--hidden" id="rtddDetail">
+            <h1>rtdd</h1>
+            <a href="http://rtdd.coolpage.biz/" target="_blank">Link</a>
+        </div>
+        <div class="container detail detail--hidden" id="interbellumDetail">
+            <h1>Interbellum</h1>
+            <a href="https://interbellum.cf/" target="_blank">Link</a>
+        </div>
+        <div class="container detail detail--hidden" id="cleansingDetail">
+            <h1>The Cleansing</h1>
+            <a href="http://the-cleansing.herokuapp.com/" target="_blank">Link</a>
+        </div>
+        <div class="container detail detail--hidden" id="nkDetail">
+            <h1>Toerisme Noord-Korea</h1>
+            <a href="http://student.howest.be/nick.dhondt/eindopdrachtweb/" target="_blank">Link</a>
+        </div>
+    </div>
+</div>
 <header class="container-fluid p-0 w-100 d-md-flex flex-row">
     <div class="title p-2 text-center" id="toggleNav">
         <h1 class="m-0 d-inline"><strong>Nick</strong> D'hondt</h1>
@@ -93,11 +121,8 @@
             </div>
             <div class="my-5 attention">
                 <div class="container">
-                    <div class="row px-3">
-                        <div class="col-12 col-md-6 col-xl-4 showcase-item">
-                            <div class="showcase-hidden text-center">
-                                <p>Uitleg bla bla</p>
-                            </div>
+                    <div class="row px-3 showcase">
+                        <div class="col-12 col-md-6 col-xl-4 showcase-item" id="luckyMealDetailLink">
                             <div class="showcase-label py-1 px-3 web-app">Web app</div>
                             <div class="showcase-visible">
                                 <img src="lucky_meal.jpg" alt="Lucky Meal" class="img-fluid">
@@ -108,10 +133,18 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-12 col-md-6 col-xl-4 showcase-item">
-                            <div class="showcase-hidden text-center">
-                                <p>Uitleg bla bla</p>
+                        <div class="col-12 col-md-6 col-xl-4 showcase-item" id="roomDetailLink">
+                            <div class="showcase-label py-1 px-3 website">Website</div>
+                            <div class="showcase-visible">
+                                <img src="the_room_viewers_guidel.png" alt="rtdd" class="img-fluid">
+                                <div class="showcase-body">
+                                    <h2>The Room viewer's guide</h2>
+                                    <p><strong>Client:</strong> Personal</p>
+                                    <p><strong>Date:</strong> In progress</p>
+                                </div>
                             </div>
+                        </div>
+                        <div class="col-12 col-md-6 col-xl-4 showcase-item" id="rtddDetailLink">
                             <div class="showcase-label py-1 px-3 web-app">Web app</div>
                             <div class="showcase-visible">
                                 <img src="rtdd.png" alt="rtdd" class="img-fluid">
@@ -122,10 +155,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-12 col-md-6 col-xl-4 showcase-item">
-                            <div class="showcase-hidden text-center">
-                                <p>Uitleg bla bla</p>
-                            </div>
+                        <div class="col-12 col-md-6 col-xl-4 showcase-item" id="interbellumDetailLink">
                             <div class="showcase-label py-1 px-3 web-app">Web app</div>
                             <div class="showcase-visible">
                                 <img src="interbellum.png" alt="Interbellum" class="img-fluid">
@@ -136,10 +166,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-12 col-md-6 col-xl-4 showcase-item">
-                            <div class="showcase-hidden text-center">
-                                <p>Uitleg bla bla</p>
-                            </div>
+                        <div class="col-12 col-md-6 col-xl-4 showcase-item" id="cleansingDetailLink">
                             <div class="showcase-label py-1 px-3 web-app">Web app</div>
                             <div class="showcase-visible">
                                 <img src="the_cleansing.png" alt="The Cleansing" class="img-fluid">
@@ -150,10 +177,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-12 col-md-6 col-xl-4 showcase-item">
-                            <div class="showcase-hidden text-center">
-                                <p>Uitleg bla bla</p>
-                            </div>
+                        <div class="col-12 col-md-6 col-xl-4 showcase-item" id="nkDetailLink">
                             <div class="showcase-label py-1 px-3 website">Website</div>
                             <div class="showcase-visible">
                                 <img src="toerisme.jpg" alt="Toerisme Noord-Korea" class="img-fluid">

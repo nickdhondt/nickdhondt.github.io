@@ -136,6 +136,70 @@ nav a, nav a:hover, nav a:focus {
     border-radius: 5rem;
 }
 
+.details {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,.5);
+    z-index: 9999;
+    opacity: 1;
+    transition: opacity .5s;
+    display: table;
+    overflow: hidden;
+}
+
+.showcase {
+    padding: 2rem 0;
+}
+
+/*.details:hover {*/
+    /*opacity: 0;*/
+/*}*/
+
+.details--small {
+    opacity: 0;
+}
+
+.details--hidden {
+    visibility: hidden;
+    width: 0;
+    height: 0;
+}
+
+.detail.detail--hidden {
+    visibility: hidden;
+    width: 0;
+    height: 0;
+    padding: 0;
+    margin: 0;
+}
+
+.details__container {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.detail {
+    height: 80%;
+    background: #eee;
+    transform: scale(1);
+    opacity: 1;
+    transition: transform .5s, opacity .5s;
+    padding: 2rem;
+}
+
+.details--small .detail {
+    transform: scale(.8);
+    opacity: 0;
+}
+
+/*.details:hover .detail {*/
+    /*transform: scale(.8);*/
+    /*opacity: 0;*/
+/*}*/
+
 .attention {
     background: #416987;
     color: #fff;
@@ -144,7 +208,12 @@ nav a, nav a:hover, nav a:focus {
 .showcase-item {
     padding: 2rem;
     overflow: hidden;
-    position: relative;
+}
+
+.showcase-item:hover {
+    /*opacity: .7;*/
+    cursor: pointer;
+    background: #385673;
 }
 
 .showcase-label {
@@ -154,14 +223,13 @@ nav a, nav a:hover, nav a:focus {
     text-transform: uppercase;
     font-weight: lighter;
     font-size: .8em;
-    z-index: 2;
     transition: top .5s, right .5s;
 }
 
-.showcase-hidden:hover + .showcase-label, .showcase-label:hover {
-    right: 0;
-    top: 1rem;
-}
+/*.showcase-hidden:hover + .showcase-label, .showcase-label:hover {*/
+    /*right: 0;*/
+    /*top: 1rem;*/
+/*}*/
 
 .website {
     background: #417A74;
@@ -171,22 +239,22 @@ nav a, nav a:hover, nav a:focus {
     background: #418758;
 }
 
-.showcase-hidden {
-    background: rgba(0, 0, 0, .7);
-    opacity: 0;
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    transition: opacity .33s;
-    padding: 1rem;
-    z-index: 1;
-}
+/*.showcase-hidden {*/
+    /*background: rgba(0, 0, 0, .7);*/
+    /*opacity: 0;*/
+    /*position: absolute;*/
+    /*top: 0;*/
+    /*left: 0;*/
+    /*width: 100%;*/
+    /*height: 100%;*/
+    /*transition: opacity .33s;*/
+    /*padding: 1rem;*/
+    /*z-index: 1;*/
+/*}*/
 
-.showcase-item:hover .showcase-hidden {
-    opacity: 1;
-}
+/*.showcase-item:hover .showcase-hidden {*/
+    /*opacity: 1;*/
+/*}*/
 
 .showcase-body {
     margin-top: 1rem;
