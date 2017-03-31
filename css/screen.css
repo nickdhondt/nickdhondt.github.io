@@ -1,7 +1,11 @@
 html, body {
     height: 100%;
     color: #000;
-    font-family: "Lato", sans-serif;
+    font-family: "Montserrat", sans-serif;
+}
+
+main {
+    height: 100%;
 }
 
 .background {
@@ -171,8 +175,25 @@ html, body {
     border-bottom: 2px solid #e2db19;
 }
 
+.catcher {
+    font-size: 2rem;
+    color: #fff;
+    max-width: 100%;
+    background: rgba(59, 54, 60, .8);
+    padding: 1rem;
+}
+
+.catcher > span {
+    color: #e2db19;
+}
+
 @media screen and (min-width: 768px) {
     .splash {
         background: none;
+    }
+
+    .catcher {
+        margin-left: 15%;
+        max-width: 45%;
     }
 }
