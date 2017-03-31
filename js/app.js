@@ -18,15 +18,16 @@ $("#toggle-menu").click(function () {
 });
 
 function calculateCatcherBgWidth() {
-    var width, catcher;
+    var catcher, catcherBg;
     catcher = $("#catcher");
+    catcherBg = $("#catcher-bg");
+
     if (catcher.offset()) {
         if (window.matchMedia("(min-width: 768px)").matches) {
             var bg = $("#bg-section-one");
-            width = (catcher.offset().left + catcher.outerWidth()) - bg.width();
+            catcherBg.css("width", (catcher.offset().left + catcher.outerWidth()) - bg.width() + "px");
         } else {
-            width = catcher.outerWidth();
+            catcherBg.css("width", "100%");
         }
     }
-    $("#catcher-bg").css("width", width + "px");
 }

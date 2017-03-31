@@ -5,7 +5,7 @@ html, body {
 }
 
 main {
-    height: 100%;
+    min-height: 100%;
 }
 
 nav {
@@ -23,6 +23,10 @@ nav {
     left: 0;
     width: 100%;
     z-index: -1;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 }
 
 .background__accent {
@@ -46,7 +50,7 @@ nav {
     height: 100%;
 }
 
-.background__section--index-one {
+.background__section--index-one, .background__section--skills-one, .background__section--contact-one {
     background: #3b363c;
 }
 
@@ -66,24 +70,25 @@ nav {
     font-weight: bold;
     display: inline-block;
     line-height: 1rem;
-}
-
-.splash__word--right {
-    margin-right: 2rem;
-}
-
-.splash__word--left {
-    margin-left: 2rem;
+    word-spacing: 2rem;
 }
 
 .splash__word--light {
     color: #fff;
 }
 
+.footer {
+    position: relative;
+}
+
 .indicator {
     position: absolute;
     bottom: 0;
     text-transform: uppercase;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 }
 
 .indicator--left {
@@ -114,7 +119,7 @@ nav {
     height: 1.75rem;
     cursor: pointer;
     margin: 2rem 2rem 0 0;
-    position: absolute;
+    position: fixed;
     right: 0;
     top: 0;
     pointer-events: all;
@@ -182,10 +187,21 @@ nav {
     font-size: 3rem;
     width: 5rem;
     height: 5rem;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    cursor: default;
+}
+
+.me-circle {
+    width: 10rem;
+    height: 10rem;
+    border-radius: 5rem;
 }
 
 .navigation-panel {
-    position: absolute;
+    position: fixed;
     right: 0;
     top: 0;
     height: 100%;
@@ -227,6 +243,18 @@ nav {
     border-bottom: 2px solid #e2db19;
 }
 
+.page__section__header {
+    font-size: 3.5rem;
+    text-transform: uppercase;
+    font-weight: bold;
+    color: #000;
+}
+
+.page {
+    padding: 5.5rem 0;
+    color: #666;
+}
+
 .catcher {
     color: #fff;
     max-width: 100%;
@@ -247,7 +275,7 @@ nav {
     font-size: 2rem;
 }
 
-.text-accent::after {
+.box-accent::after {
     display: block;
     content: "";
     border-bottom: 2px solid #e2db19;
@@ -277,5 +305,9 @@ nav {
     .catcher {
         margin-left: 15%;
         max-width: 45%;
+    }
+
+    .page {
+        padding: 10rem 0;
     }
 }
