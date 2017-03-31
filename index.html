@@ -1,229 +1,55 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <meta name="theme-color" content="#417A74">
-    <link rel="manifest" href="manifest.json">
     <title>Nick D'hondt</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
-    <link rel="stylesheet" href="screen.css">
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,400i,700,700i" rel="stylesheet">
+    <link rel="stylesheet" href="css/screen.css">
     <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
-    <script src="jquery.mousewheel.min.js"></script>
 </head>
-<body class="d-flex flex-column align-items-stretch">
-<div class="details details--hidden details--small" id="detailsContainer">
-    <div class="details__container">
-        <div class="container detail detail--hidden" id="luckyMealDetail">
-            <h1>Lucky Meal</h1>
-            <a href="http://student.howest.be/nick.dhondt/luckymeal/" target="_blank">Link</a>
+<body>
+<div class="background d-flex flex-row container-fluid p-0">
+    <div class="background__section background__section--index-one hidden-sm-down col-md-5 p-0">
+        <div class="splash text-right">
+            <span class="splash__word splash__word--right splash__word--light">nick</span>
+            <span class="splash__word splash__word--light">d'hondt</span>
         </div>
-        <div class="container detail detail--hidden" id="roomDetail">
-            <h1>The Room viewer's guide</h1>
-            <a href="https://theroomviewersguide.cf/" target="_blank">Link</a>
+    </div>
+    <div class="background__section background__section--index-two col-12 col-md-7 p-0">
+        <div class="splash text-left">
+            <span class="splash__word splash__word--light">web</span>
+            <span class="splash__word splash__word--left splash__word--light">developer</span>
         </div>
-        <div class="container detail detail--hidden" id="rtddDetail">
-            <h1>rtdd</h1>
-            <a href="http://rtdd.coolpage.biz/" target="_blank">Link</a>
-        </div>
-        <div class="container detail detail--hidden" id="interbellumDetail">
-            <h1>Interbellum</h1>
-            <a href="https://interbellum.cf/" target="_blank">Link</a>
-        </div>
-        <div class="container detail detail--hidden" id="cleansingDetail">
-            <h1>The Cleansing</h1>
-            <a href="http://the-cleansing.herokuapp.com/" target="_blank">Link</a>
-        </div>
-        <div class="container detail detail--hidden" id="nkDetail">
-            <h1>Toerisme Noord-Korea</h1>
-            <a href="http://student.howest.be/nick.dhondt/eindopdrachtweb/" target="_blank">Link</a>
-        </div>
+    </div>
+    <div class="indicator indicator--left">
+        <span class="indicator__element indicator__element--active">01</span><span class="indicator__element"> / 07</span>
+    </div>
+    <div class="indicator indicator--right">
+        <span class="indicator__element indicator__element--active">nick</span><span class="indicator__element"> / d'hondt</span>
     </div>
 </div>
-<header class="container-fluid p-0 w-100 d-md-flex flex-row">
-    <div class="title p-2 text-center" id="toggleNav">
-        <h1 class="m-0 d-inline"><strong>Nick</strong> D'hondt</h1>
-    </div>
-    <nav class="text-center">
-        <div class="indicator" id="indicator"><div class="mx-auto indicator-line" id="indicator-line"></div></div>
-        <ul class="list-unstyled d-md-flex flex-row align-content-stretch m-0 w-100">
-            <li>
-                <div>
-                    <a href="#" class="p-2 d-block" id="helloLink"><span>Hello</span></a>
-                </div>
-            </li>
-            <li>
-                <div>
-                    <a href="#" class="p-2 d-block" id="skillsLink"><span>Skills</span></a>
-                </div>
-            </li>
-            <li>
-                <div>
-                    <a href="#" class="p-2 d-block" id="showcaseLink"><span>Showcase</span></a>
-                </div>
-            </li>
-            <li>
-                <div>
-                    <a href="#" class="p-2 d-block" id="contactLink"><span>Contact</span></a>
-                </div>
-            </li>
+<nav>
+    <div class="navigation-panel col-12 col-md-7 col-lg-5" id="panel">
+        <ul class="navigation d-flex flex-column justify-content-center align-items-center nav">
+            <li><a class="navigation__item" href="#"><div>hello</div></a></li>
+            <li><a class="navigation__item" href="#"><div>timeline</div></a></li>
+            <li><a class="navigation__item" href="#"><div>skills</div></a></li>
+            <li><a class="navigation__item" href="#"><div>showcase</div></a></li>
+            <li><a class="navigation__item" href="#"><div>contact</div></a></li>
         </ul>
-    </nav>
-</header>
-<main class="d-flex">
-    <div class="flex-reset" id="sectionHandle">
-        <section class="section" id="helloSection">
-            <div class="container pt-5">
-                <h1 class="section-head">Hello, I'm Nick, a passionate web developer</h1>
-            </div>
-            <div class="my-5 attention py-5">
-                <div class="container">
-                    <img src="me-sq.jpg" alt="Photo of me" class="img-fluid me-circle mb-3">
-                    <p>Hey, I’m Nick. It’s been a while since I’ve create my first website. Must’ve been around the year 2009. Since then I’ve been making steady progress.</p>
-                    <p>Three year ago I decide to follow this passion for development and started studying New Media and Communication Technology at Howest Kortrijk. Off course this had to be with the emphasis on programming, web development and design.</p>
-                    <p>Lately I’ve been exceptionally interested in experimental web technologies and the latest web development trends.</p>
-                    {{timeline}}
-                </div>
-            </div>
-        </section>
-        <section class="section" id="skillsSection">
-            <div class="container pt-5">
-                <h1 class="section-head">Skills</h1>
-            </div>
-            <div class="my-5 attention py-5">
-                <div class="container">
-                    <h2>Programming</h2>
-                    <ul>
-                        <li>html & css</li>
-                        <li>js & jquery</li>
-                        <li>asp.net</li>
-                        <li>c#</li>
-                        <li>java & android</li>
-                        <li>php</li>
-                    </ul>
-                    <h2>Other</h2>
-                    <ul>
-                        <li>photoshop</li>
-                        <li>illustrator</li>
-                    </ul>
-                    <h2>In progress</h2>
-                    <ul>
-                        <li>node & express</li>
-                        <li>angular 2</li>
-                    </ul>
-                </div>
-            </div>
-        </section>
-        <section class="section" id="showcaseSection">
-            <div class="container mt-5">
-                <h1 class="section-head">Showcase</h1>
-            </div>
-            <div class="my-5 attention">
-                <div class="container">
-                    <div class="row px-3 showcase">
-                        <div class="col-12 col-md-6 col-xl-4 showcase-item" id="luckyMealDetailLink">
-                            <div class="showcase-label py-1 px-3 web-app">Web app</div>
-                            <div class="showcase-visible">
-                                <img src="lucky_meal.jpg" alt="Lucky Meal" class="img-fluid">
-                                <div class="showcase-body">
-                                    <h2>Lucky Meal</h2>
-                                    <p><strong>Client:</strong> NMCT</p>
-                                    <p><strong>Date:</strong> 11/2015</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-12 col-md-6 col-xl-4 showcase-item" id="roomDetailLink">
-                            <div class="showcase-label py-1 px-3 website">Website</div>
-                            <div class="showcase-visible">
-                                <img src="the_room_viewers_guidel.png" alt="rtdd" class="img-fluid">
-                                <div class="showcase-body">
-                                    <h2>The Room viewer's guide</h2>
-                                    <p><strong>Client:</strong> Personal</p>
-                                    <p><strong>Date:</strong> In progress</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-12 col-md-6 col-xl-4 showcase-item" id="rtddDetailLink">
-                            <div class="showcase-label py-1 px-3 web-app">Web app</div>
-                            <div class="showcase-visible">
-                                <img src="rtdd.png" alt="rtdd" class="img-fluid">
-                                <div class="showcase-body">
-                                    <h2>rtdd</h2>
-                                    <p><strong>Client:</strong> Personal</p>
-                                    <p><strong>Date:</strong> 04/2015</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-12 col-md-6 col-xl-4 showcase-item" id="interbellumDetailLink">
-                            <div class="showcase-label py-1 px-3 web-app">Web app</div>
-                            <div class="showcase-visible">
-                                <img src="interbellum.png" alt="Interbellum" class="img-fluid">
-                                <div class="showcase-body">
-                                    <h2>Interbellum</h2>
-                                    <p><strong>Client:</strong> Personal</p>
-                                    <p><strong>Date:</strong> In progress</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-12 col-md-6 col-xl-4 showcase-item" id="cleansingDetailLink">
-                            <div class="showcase-label py-1 px-3 web-app">Web app</div>
-                            <div class="showcase-visible">
-                                <img src="the_cleansing.png" alt="The Cleansing" class="img-fluid">
-                                <div class="showcase-body">
-                                    <h2>The Cleansing</h2>
-                                    <p><strong>Client:</strong> NMCT</p>
-                                    <p><strong>Date:</strong> 01/2017</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-12 col-md-6 col-xl-4 showcase-item" id="nkDetailLink">
-                            <div class="showcase-label py-1 px-3 website">Website</div>
-                            <div class="showcase-visible">
-                                <img src="toerisme.jpg" alt="Toerisme Noord-Korea" class="img-fluid">
-                                <div class="showcase-body">
-                                    <h2>Toerisme Noord-Korea</h2>
-                                    <p><strong>Client:</strong> NMCT</p>
-                                    <p><strong>Date:</strong> 05/2014</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <section class="section" id="contactSection">
-            <div class="container pt-5">
-                <h1 class="section-head">Contact</h1>
-                <ul class="list-unstyled">
-                    <li>E-mail: nick.dhondt38@gmail.com</li>
-                    <li>Phone: +32 477 39 19 82</li>
-                    <li>City: Zedelgem</li>
-                </ul>
-            </div>
-            <div class="my-5 attention py-5">
-                <div class="container">
-                    <form>
-                        <div class="form-group">
-                            <label for="exampleInputEmail1">Email address</label>
-                            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
-                            <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
-                        </div>
-                        <div class="form-group">
-                            <label for="exampleInputPassword1">Password</label>
-                            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
-                        </div>
-                        <div class="form-group">
-                            <label for="exampleTextarea">Example textarea</label>
-                            <textarea class="form-control" id="exampleTextarea" rows="3"></textarea>
-                        </div>
-                        <button type="submit" class="btn btn-primary">Submit</button>
-                    </form>
-                </div>
-            </div>
-        </section>
     </div>
+    <div class="hamburger d-flex flex-column justify-content-between" id="toggle-menu">
+        <div class="hamburger__bar"></div>
+        <div class="hamburger__bar"></div>
+        <div class="hamburger__bar"></div>
+    </div>
+</nav>
+<main>
+
 </main>
-<script src="app.js"></script>
+<script src="js/app.js"></script>
 </body>
 </html>
