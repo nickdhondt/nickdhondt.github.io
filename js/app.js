@@ -1,4 +1,4 @@
-$( window ).resize(function() {
+$(window).resize(function () {
     calculateCatcherBgWidth();
 });
 
@@ -19,13 +19,14 @@ $("#toggle-menu").click(function () {
 
 function calculateCatcherBgWidth() {
     var width, catcher;
-    if (window.matchMedia("(min-width: 768px)").matches) {
-        var bg = $("#bg-section-one");
-        catcher = $("#catcher");
-        width = (catcher.offset().left + catcher.outerWidth()) - bg.width();
-    } else {
-        catcher = $("#catcher");
-        width = catcher.outerWidth();
+    catcher = $("#catcher");
+    if (catcher.offset()) {
+        if (window.matchMedia("(min-width: 768px)").matches) {
+            var bg = $("#bg-section-one");
+            width = (catcher.offset().left + catcher.outerWidth()) - bg.width();
+        } else {
+            width = catcher.outerWidth();
+        }
     }
     $("#catcher-bg").css("width", width + "px");
 }
