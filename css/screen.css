@@ -562,6 +562,7 @@ nav {
     .skills {
         width: calc(100% - 6rem);
         margin: 6rem 3rem;
+        padding: 4rem 3rem;
     }
 }
 
