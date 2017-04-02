@@ -392,15 +392,18 @@ body::-webkit-scrollbar-thumb {
     overflow: auto;
 }
 
-.showcase__content > div > p {}
-
 .showcase__content > div {
     min-height: calc(100% - 2rem);
     margin-bottom: 2rem;
+    display: none;
 }
 
 .showcase__content:hover {
     opacity: 1;
+}
+
+.showcase__content:hover > div {
+    display: block;
 }
 
 .showcase__title {
