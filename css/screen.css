@@ -84,6 +84,10 @@ nav {
     background-image: url("../img/bg-contact.jpg");
 }
 
+.background__section--skills-two {
+    background-image: url("../img/bg-skills.jpg");
+}
+
 .splash {
     width: 100%;
     padding: 2rem;
@@ -223,6 +227,8 @@ nav {
     width: 10rem;
     height: 10rem;
     border-radius: 5rem;
+    float: left;
+    margin: 0 1.5rem 1.5rem 0;
 }
 
 .navigation-panel {
@@ -456,6 +462,16 @@ nav {
     color: #bbb;
 }
 
+.skills {
+    width: 100%;
+    height: auto;
+    margin: auto;
+    margin-bottom: 6rem;
+    padding: 1rem;
+    background: #fff url("../img/bg-skills-panel.jpg") no-repeat center;
+    background-size: cover;
+}
+
 @media screen and (min-width: 576px) {
     .page__section__header {
         font-size: 3.5rem;
@@ -480,13 +496,24 @@ nav {
         background: rgba(59, 54, 60, .8);
     }
 
-    .dark {
-        background: none;
+    .skills {
+        width: calc(100% - 6rem);
+        height: 80%;
+        margin: 5rem 3rem;
+        padding: 2rem;
     }
 }
 
 @media screen and (min-width: 1200px) {
     .showcase__list-item {
         width: calc(100% / 3);
+    }
+
+
+    .skills {
+        width: calc(100% - 10rem);
+        height: 80%;
+        margin: 5rem;
+        padding: 2rem;
     }
 }
