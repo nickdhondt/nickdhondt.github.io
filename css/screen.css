@@ -43,7 +43,7 @@ nav {
 
 .background__accent {
     position: absolute;
-    bottom: 25%;
+    top: 65%;
     right: 100px;
     width: 2000px;
     font-size: 10rem;
@@ -266,7 +266,7 @@ nav {
 }
 
 .page__section__header {
-    font-size: 3.5rem;
+    font-size: 2.5rem;
     text-transform: uppercase;
     font-weight: bold;
     color: #000;
@@ -407,7 +407,7 @@ nav {
 
 .showcase__title {
     text-transform: uppercase;
-    font-size: 1.5rem;
+    font-size: 1.7rem;
     color: #000;
 }
 
@@ -443,6 +443,11 @@ nav {
     text-decoration: none;
 }
 
+@media screen and (min-width: 576px) {
+    .page__section__header {
+        font-size: 3.5rem;
+    }
+}
 @media screen and (min-width: 768px) {
     .catcher {
         margin-left: 15%;
