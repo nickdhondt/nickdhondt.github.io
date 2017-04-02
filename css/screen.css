@@ -54,9 +54,13 @@ nav {
     background: #3b363c;
 }
 
-.background__section--index-two {
-    background: #c2beb2 url("../img/bg-index.jpg") no-repeat center;
+.background__section--index-two, .background__section--contact-two {
+    background: #c2beb2 no-repeat center;
     background-size: cover;
+}
+
+.background__section--index-two {
+    background-image: url("../img/bg-index.jpg");
 }
 
 .splash {
@@ -315,21 +319,34 @@ nav {
 }
 
 .showcase {
-    height: 100%;
-}
-
-.showcase__list {
-    height: 100%;
+    background: #c2beb2;
 }
 
 .showcase__list-item {
-    width: 50%;
-    background: #3b363c;
-    height: 33.333%;
+    width: 100%;
+    display: inline-block;
+    position: relative;
 }
 
-.showcase__list-item:hover {
-    background: rgba(59, 54, 60, .8);
+.showcase__list-item:before{
+    content: "";
+    display: block;
+    padding-top: 100%;
+}
+
+.showcase__content {
+    position: absolute;
+    top: 0;
+    padding: 1.5rem;
+    margin: 1.5rem;
+    width: calc(100% - 3rem);
+    height: calc(100% - 3rem);
+    background: #e2db19;
+    opacity: 0;
+    transition: .25s ease-in-out;
+}
+.showcase__content:hover {
+    opacity: 1;
 }
 
 @media screen and (min-width: 768px) {
@@ -343,5 +360,9 @@ nav {
         padding-bottom: 10rem;
         padding-left: auto;
         padding-right: auto;
+    }
+
+    .showcase__list-item {
+        width: calc(100% / 3);
     }
 }
