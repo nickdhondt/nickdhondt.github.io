@@ -6,13 +6,14 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Contact - Nick D'hondt</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,400i,600" rel="stylesheet">
     <link rel="stylesheet" href="../css/screen.css">
     <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
 </head>
 <body>
 <div class="background d-flex flex-row container-fluid p-0">
-    <div class="background__section background__section--contact-one col-12 col-md-5 p-0">
+    <div class="background__section background__section--contact-one col-12 col-md-5 p-0" id="bg-section-one">
         <div class="background__accent">contact</div>
     </div>
     <div class="background__section background__section--contact-two hidden-sm-down col-md-7 p-0"></div>
@@ -36,14 +37,24 @@
         </div>
     </nav>
 </header>
-<main class="container d-flex flex-column justify-content-center">
-    <article class="row page">
-        <section class="col-12 col-md-6 box-accent page__section page__section--light">
+<main class="dark container d-flex flex-column justify-content-center">
+    <article class="catcher page" id="catcher">
+        <div class="catcher__background catcher__background--no-mobile" id="catcher-bg"></div>
+        <section class="box-accent">
             <h1 class="page__section__header page__section__header--light mb-5">contact</h1>
-            <ul class="list-unstyled mb-0">
-                <li>E-mail: nick.dhondt38@gmail.com</li>
-                <li>City: Zedelgem</li>
-            </ul>
+            <dl class="mb-0">
+                <dt class="text-uppercase">E-mail:</dt>
+                <dd class="text-highlight">nick.dhondt38@gmail.com</dd>
+                <dt class="text-uppercase">Phone:</dt>
+                <dd class="text-highlight">+32 477 39 19 82</dd>
+                <dt class="text-uppercase">City:</dt>
+                <dd class="text-highlight">Zedelgem</dd>
+            </dl>
+            <div class="social">
+                <a href="https://www.facebook.com/nick.dhondt" target="_blank"><i class="fa fa-facebook-square fa-2x mr-2" aria-hidden="true"></i></a>
+                <a href="https://twitter.com/dhondt_nick" target="_blank"><i class="fa fa-twitter-square fa-2x mr-2" aria-hidden="true"></i></a>
+                <a href="https://www.linkedin.com/in/nick-dhondt/" target="_blank"><i class="fa fa-linkedin-square fa-2x" aria-hidden="true"></i></a>
+            </div>
         </section>
     </article>
 </main>
