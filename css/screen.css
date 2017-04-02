@@ -71,21 +71,19 @@ nav {
     background: #3b363c;
 }
 
-.background__section--index-two, .background__section--contact-two, .background__section--skills-two {
-    background: #c2beb2 no-repeat center;
+.background__section--index-two {
+    background: #7a7d82 url("../img/bg-index.jpg") no-repeat center;
     background-size: cover;
 }
 
-.background__section--index-two {
-    background-image: url("../img/bg-index.jpg");
-}
-
 .background__section--contact-two {
-    background-image: url("../img/bg-contact.jpg");
+    background: #8a8789 url("../img/bg-contact.jpg") no-repeat center;
+    background-size: cover;
 }
 
 .background__section--skills-two {
-    background-image: url("../img/bg-skills.jpg");
+    background: #636c6f url("../img/bg-skills.jpg") no-repeat center;
+    background-size: cover;
 }
 
 .splash {
