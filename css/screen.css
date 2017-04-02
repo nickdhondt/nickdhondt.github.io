@@ -80,6 +80,10 @@ nav {
     background-image: url("../img/bg-index.jpg");
 }
 
+.background__section--contact-two {
+    background-image: url("../img/bg-contact.jpg");
+}
+
 .splash {
     width: 100%;
     padding: 2rem;
