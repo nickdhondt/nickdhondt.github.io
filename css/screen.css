@@ -395,7 +395,7 @@ nav {
     margin: 2rem;
     width: calc(100% - 4rem);
     height: calc(100% - 4rem);
-    background: rgba(226, 219, 25, .9);
+    background: rgba(226, 219, 25, .95);
     opacity: 0;
     transition: .25s ease-in-out;
     text-align: center;
