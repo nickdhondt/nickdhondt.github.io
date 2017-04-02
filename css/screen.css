@@ -42,6 +42,11 @@ nav {
     line-height: 7rem;
 }
 
+.background__accent--top {
+    bottom: auto;
+    top: 32%;
+}
+
 .background__accent--light {
     color: #f3f3f3;
 }
@@ -54,7 +59,7 @@ nav {
     background: #3b363c;
 }
 
-.background__section--index-two, .background__section--contact-two {
+.background__section--index-two, .background__section--contact-two, .background__section--skills-two {
     background: #c2beb2 no-repeat center;
     background-size: cover;
 }
@@ -337,16 +342,46 @@ nav {
 .showcase__content {
     position: absolute;
     top: 0;
-    padding: 1.5rem;
-    margin: 1.5rem;
-    width: calc(100% - 3rem);
-    height: calc(100% - 3rem);
-    background: #e2db19;
+    padding: 2rem;
+    margin: 2rem;
+    width: calc(100% - 4rem);
+    height: calc(100% - 4rem);
+    background: rgba(226, 219, 25, .9);
     opacity: 0;
     transition: .25s ease-in-out;
 }
 .showcase__content:hover {
     opacity: 1;
+}
+
+.lucky-meal {
+    background: url("../img/showcase/lucky-meal.jpg") no-repeat center;
+    background-size: cover;
+}
+
+.the-cleansing {
+    background: url("../img/showcase/the-cleansing.jpg") no-repeat center;
+    background-size: cover;
+}
+
+.rtdd {
+    background: url("../img/showcase/rtdd.jpg") no-repeat center;
+    background-size: cover;
+}
+
+.interbellum {
+    background: url("../img/showcase/interbellum.jpg") no-repeat center;
+    background-size: cover;
+}
+
+.the-room {
+    background: url("../img/showcase/the-room.jpg") no-repeat center;
+    background-size: cover;
+}
+
+.toerisme {
+    background: url("../img/showcase/toerisme.jpg") no-repeat center;
+    background-size: cover;
 }
 
 @media screen and (min-width: 768px) {
@@ -362,6 +397,12 @@ nav {
         padding-right: auto;
     }
 
+    .showcase__list-item {
+        width: calc(100% / 2);
+    }
+}
+
+@media screen and (min-width: 1200px) {
     .showcase__list-item {
         width: calc(100% / 3);
     }
