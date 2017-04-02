@@ -395,7 +395,7 @@ body::-webkit-scrollbar-thumb {
 .showcase__content > div {
     min-height: calc(100% - 2rem);
     margin-bottom: 2rem;
-    display: none;
+    display: none !important;
 }
 
 .showcase__content:hover {
@@ -403,7 +403,7 @@ body::-webkit-scrollbar-thumb {
 }
 
 .showcase__content:hover > div {
-    display: block;
+    display: flex !important;
 }
 
 .showcase__title {
