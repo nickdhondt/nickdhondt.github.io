@@ -485,7 +485,7 @@ nav {
 }
 
 .timeline__item--break {
-    padding-bottom: 2rem;
+    padding-bottom: 3rem;
 }
 
 .timeline__item::before {
@@ -526,7 +526,7 @@ nav {
 }
 
 .timeline__item--end::before {
-    height: .5rem;
+    height: .55rem;
 }
 
 .timeline__item--end::after {
