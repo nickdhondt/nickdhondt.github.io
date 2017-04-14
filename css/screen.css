@@ -518,7 +518,7 @@ nav {
 }
 
 .timeline__item--break::before {
-    border-left: 3px dotted #e2db19;
+    border-left: 3px dashed #e2db19;
 }
 
 .timeline__item--break::after {
