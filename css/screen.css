@@ -523,7 +523,7 @@ nav {
     height: .66rem;
     left: calc(-.33rem + (3px/ 2));
     top: .5rem;
-    border-radius: 1rem;
+    border-radius: 1.5rem;
     border: 2px solid #e2db19;
     background: #3b363c;
 }
