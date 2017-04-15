@@ -101,7 +101,7 @@ nav {
 }
 
 .splash__word--light {
-    color: #fff;
+    color: rgba(255,255,255, 0.5);
 }
 
 .footer {
@@ -384,8 +384,8 @@ nav {
     background-size: cover;
 }
 
-.interbellum {
-    background: url("../img/showcase/interbellum.jpg") no-repeat center;
+.lora {
+    background: url("../img/showcase/lora.jpg") no-repeat center;
     background-size: cover;
 }
 
@@ -609,6 +609,10 @@ nav {
     font-size: 1.5rem;
 }
 
+.box__title--light {
+    color: #fff;
+}
+
 .box__title::after {
     display: block;
     content: "";
@@ -711,7 +715,10 @@ nav {
 
     .box--large {
         margin: auto auto 6rem auto;
-        padding: 2rem;
+        padding: 3rem 2rem;
+        /*padding-left: inherit;*/
+        /*padding-right: inherit;*/
+
     }
 }
 
