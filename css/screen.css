@@ -587,6 +587,7 @@ nav {
 
 .box--dark {
     background: #3b363c url("../img/bg-story-panel.jpg") no-repeat center;
+    background-size: cover;
     color: #ccc;
 }
 
@@ -716,9 +717,6 @@ nav {
     .box--large {
         margin: auto auto 6rem auto;
         padding: 3rem 2rem;
-        /*padding-left: inherit;*/
-        /*padding-right: inherit;*/
-
     }
 }
 
