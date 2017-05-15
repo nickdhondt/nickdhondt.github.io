@@ -303,7 +303,7 @@ nav {
     left: 0;
     content: attr(data-year);
     font-weight: bold;
-    color: black;
+    color: #000;
 }
 
 .page__section__header, .page__section__title {
@@ -474,6 +474,7 @@ nav {
     display: block;
     font-weight: bold;
     transition: .25s ease-in-out;
+    cursor: pointer;
 }
 
 .showcase__button {
@@ -481,6 +482,7 @@ nav {
     color: #fff;
     width: 100%;
     max-width: 15rem;
+    border: none;
 }
 
 .showcase__button:hover {
