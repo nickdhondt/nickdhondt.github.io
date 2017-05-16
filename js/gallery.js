@@ -9,12 +9,14 @@
 
 var galleryList = $('[data-gallery]');
 var galleries = {};
-var currentList, currentSlide, firstOpen, isPresenting;
+var currentList, currentSlide, firstOpen, isPresenting, timeout, currentImage, sizer;
 
 makeGallery();
 setup();
 
 function setup() {
+    sizer = $("#gallery-sizer");
+
     galleryList.each(function () {
         if(galleries[$(this).data("gallery")] === undefined) galleries[$(this).data("gallery")] = [];
         galleries[$(this).data("gallery")].push($(this));
@@ -41,44 +43,62 @@ function setup() {
 
                 firstOpen = true;
                 isPresenting = true;
-                renderSlide(i, slide);
-
-                $(window).keydown(function(e) {
-                    if (e.which === 27) closeGallery();
-                    if (e.which === 13 || e.which === 32 || e.which === 39) $("#next").click();
-                    if (e.which === 37) $("#prev").click();
-                });
+                var nextSlide = (galleries[currentList][currentSlide + 1] !== undefined ? galleries[currentList][currentSlide + 1] : null);
+                renderSlide(i, slide, galleries[currentList].length, nextSlide);
             });
         })
     });
 
-    $("#next").click(function () {
-        if (currentSlide + 1 < galleries[currentList].length) {
-            $("#gallery-details").hide();
-            renderSlide(currentSlide + 1, galleries[currentList][currentSlide + 1], galleries[currentList].length);
-            currentSlide++;
-        }
-    });
+    $("#next").click(next);
 
-    $("#prev").click(function () {
-        if (currentSlide > 0) {
-            $("#gallery-details").hide();
-            renderSlide(currentSlide - 1, galleries[currentList][currentSlide - 1], galleries[currentList].length);
-            currentSlide--;
-        }
-    });
+    $("#prev").click(prev);
 
     $("#gallery-close").click(closeGallery);
+
+    $(window).keydown(function(e) {
+        if (e.which === 27 || e.which === 88) closeGallery();
+        if (e.which === 13 || e.which === 32 || e.which === 39) next();
+        if (e.which === 37) prev();
+    });
+
+    $(window).resize(function () {
+        if (currentImage !== undefined) calculateDims(currentImage);
+    })
 }
 
-function renderSlide(i, slide, length) {
+function next() {
+    if (currentSlide + 1 < galleries[currentList].length) {
+        var details = $("#gallery-details");
+        details.stop();
+        details.css("opacity", "0");
+        var nextSlide = (galleries[currentList][currentSlide + 2] !== undefined ? galleries[currentList][currentSlide + 2] : null);
+        renderSlide(currentSlide + 1, galleries[currentList][currentSlide + 1], galleries[currentList].length, nextSlide);
+        currentSlide++;
+    }
+}
+
+function prev() {
+    if (currentSlide > 0) {
+        var details = $("#gallery-details");
+        details.stop();
+        details.css("opacity", "0");
+        var nextSlide = (galleries[currentList][currentSlide - 2] !== undefined ? galleries[currentList][currentSlide - 2] : null);
+        renderSlide(currentSlide - 1, galleries[currentList][currentSlide - 1], galleries[currentList].length, nextSlide);
+        currentSlide--;
+    }
+}
+
+function renderSlide(i, slide, length, nextSlide) {
+    var image, preNext;
+
     $("#gallery-caption").text(slide.attr("data-caption"));
 
     $("#number-current").text("0" + (i + 1));
-    $("#gallery-details").fadeIn(1000);
+    $("#gallery-details").animate({opacity: 1}, 1000);
 
     var imageObject = $("#gallery-image");
-    var sizer = $("#gallery-sizer");
+    imageObject.stop();
+    clearTimeout(timeout);
 
     if (firstOpen) {
         image = new Image();
@@ -92,35 +112,19 @@ function renderSlide(i, slide, length) {
         });
     }
 
+    currentImage = image;
+
     firstOpen = false;
 
-    var image, height, width, windowWidth, windowHeight, ratio;
-
     function onLoad() {
-        height = image.height;
-        width = image.width;
-
-        windowWidth = $(window).width();
-        windowHeight = $(window).height();
-
-        if (width > windowWidth * .9) {
-            ratio = height / width;
-            width = windowWidth * .9;
-            height = width * ratio;
+        if (nextSlide !== null) {
+            preNext = new Image();
+            preNext.src = nextSlide.attr("href");
         }
 
-        if (height > (windowHeight * .9) - 90) {
-            ratio = width / height;
-            height = (windowHeight * .9) - 90;
-            width = height * ratio;
-        }
+        calculateDims(image);
 
-        sizer.width(width);
-        sizer.height(height);
-
-        $("#gallery-details").width(width + 8);
-
-        setTimeout(function () {
+        timeout = setTimeout(function () {
             imageObject.fadeIn();
 
             imageObject.attr("src", slide.attr("href"));
@@ -132,11 +136,37 @@ function renderSlide(i, slide, length) {
 
     if (i === length - 1) $("#next").invisible();
     else $("#next").visible();
+}
 
+function calculateDims(image) {
+    var details = $("#gallery-details");
+    var height, width, windowWidth, windowHeight, ratio;
+    height = image.height;
+    width = image.width;
+
+    windowWidth = $(window).width();
+    windowHeight = $(window).height();
+
+    if (width > windowWidth * .9) {
+        ratio = height / width;
+        width = windowWidth * .9;
+        height = width * ratio;
+    }
+
+    if (height > (windowHeight * .9) - details.innerHeight()) {
+        ratio = width / height;
+        height = (windowHeight * .9) - details.innerHeight();
+        width = height * ratio;
+    }
+
+    sizer.width(width);
+    sizer.height(height);
+
+    details.width(width + 8);
 }
 
 function makeGallery() {
-    var galleryNodes = $("<div class='gallery-overlay' id='gallery-overlay'></div><div class='gallery justify-content-center align-items-center flex-column' id='gallery'><div class='gallery__container' id='gallery-container'><div class='gallery__box'><div class='gallery__sizer d-flex justify-content-center align-items-center flex-row' id='gallery-sizer'><div class='gallery__spinner'><div class='spinner'></div></div><img src='' class='gallery__image' id='gallery-image'></div><div class='gallery__nav d-flex flex-row'><div class='gallery__nav__prev d-flex align-items-center' id='prev'><div class='arrow-left ml-3'></div></div><div class='gallery__nav__next d-flex align-items-center' id='next'><div class='arrow-right ml-auto mr-3'></div></div></div></div><div class='gallery__details d-flex flex-row' id='gallery-details'><div><div class='gallery__caption' id='gallery-caption'></div><div class='gallery__number pt-1' id='gallery-number'><span class='gallery__number--active' id='number-current'></span> / <span id='number-total'></span></div></div><div class='gallery__close ml-auto mt-auto d-flex flex-column justify-content-between' id='gallery-close'><div class='gallery__close-element'></div><div class='gallery__close-element'></div></div></div></div></div>");
+    var galleryNodes = $("<div class='gallery-overlay' id='gallery-overlay'></div><div class='gallery justify-content-center align-items-center flex-column' id='gallery'><div class='gallery__container' id='gallery-container'><div class='gallery__box'><div class='gallery__sizer' id='gallery-sizer'><div class='gallery__spinner'><div class='spinner'></div></div><img src='' class='gallery__image' id='gallery-image'></div><div class='gallery__nav d-flex flex-row'><div class='gallery__nav__prev d-flex align-items-center' id='prev'><div class='arrow-left ml-3'></div></div><div class='gallery__nav__next d-flex align-items-center' id='next'><div class='arrow-right ml-auto mr-3'></div></div></div></div><div class='gallery__details d-flex flex-row' id='gallery-details'><div><div class='gallery__caption' id='gallery-caption'></div><div class='gallery__number pt-1' id='gallery-number'><span class='gallery__number--active' id='number-current'></span> / <span id='number-total'></span></div></div><div class='gallery__close ml-auto mt-auto d-flex flex-column justify-content-between' id='gallery-close'><div class='gallery__close-element'></div><div class='gallery__close-element'></div></div></div></div></div>");
     $("body").append(galleryNodes);
 
     $("#gallery").click(closeGallery);
@@ -152,7 +182,10 @@ function closeGallery() {
     galleryObject.fadeOut(function () {
         galleryObject.removeClass("gallery--top");
         galleryObject.invisible();
+        $("#gallery-image").hide();
     });
-    $("#gallery-image").hide();
     $("#gallery-overlay").fadeOut();
+    var details = $("#gallery-details");
+    details.stop();
+    details.css("opacity", "0");
 }
