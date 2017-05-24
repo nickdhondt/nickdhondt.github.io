@@ -491,6 +491,12 @@ nav {
     text-decoration: none;
 }
 
+.showcase__button:active {
+    background: rgba(0, 0, 0, .8);
+    color: #fff;
+    text-decoration: none;
+}
+
 .social > a {
     color: #fff;
 }

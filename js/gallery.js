@@ -91,7 +91,7 @@ function prev() {
 function renderSlide(i, slide, length, nextSlide) {
     var image, preNext;
 
-    $("#gallery-caption").text(slide.attr("data-caption"));
+    $("#gallery-caption").html(slide.attr("data-caption"));
 
     $("#number-current").text("0" + (i + 1));
     $("#gallery-details").animate({opacity: 1}, 1000);
@@ -183,9 +183,11 @@ function closeGallery() {
         galleryObject.removeClass("gallery--top");
         galleryObject.invisible();
         $("#gallery-image").hide();
+
+
+        var details = $("#gallery-details");
+        details.stop();
+        details.css("opacity", "0");
     });
     $("#gallery-overlay").fadeOut();
-    var details = $("#gallery-details");
-    details.stop();
-    details.css("opacity", "0");
 }
