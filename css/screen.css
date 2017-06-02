@@ -334,6 +334,7 @@ nav {
 .page a {
     color: #000;
     text-decoration: none;
+    border-bottom: 1px solid #000;
 }
 
 .page a:hover {
@@ -386,6 +387,7 @@ nav {
 .catcher__link > a {
     color: #fff;
     text-decoration: none;
+    border-bottom: none;
 }
 
 .catcher__link > a:hover {
@@ -625,6 +627,7 @@ nav {
 
 .box--dark a {
     color: #fff;
+    border-bottom: 1px solid #fff;
 }
 
 .box--dark a:hover {
