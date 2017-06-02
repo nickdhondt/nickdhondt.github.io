@@ -98,23 +98,23 @@ nav {
     background-size: cover;
 }
 
-.splash {
-    width: 100%;
-    padding: 2rem;
-    margin-top: 2rem;
-}
+/*.splash {*/
+    /*width: 100%;*/
+    /*padding: 2rem;*/
+    /*margin-top: 2rem;*/
+/*}*/
 
-.splash__word {
-    text-transform: uppercase;
-    font-weight: bold;
-    display: inline-block;
-    line-height: 1rem;
-    word-spacing: 2rem;
-}
+/*.splash__word {*/
+    /*text-transform: uppercase;*/
+    /*font-weight: bold;*/
+    /*display: inline-block;*/
+    /*line-height: 1rem;*/
+    /*word-spacing: 2rem;*/
+/*}*/
 
-.splash__word--light {
-    color: rgba(255,255,255, 0.5);
-}
+/*.splash__word--light {*/
+    /*color: rgba(255,255,255, 0.5);*/
+/*}*/
 
 .footer {
     position: relative;
@@ -331,6 +331,16 @@ nav {
     color: #666;
 }
 
+.page a {
+    color: #000;
+    text-decoration: none;
+}
+
+.page a:hover {
+    color: #e2db19;
+    border-bottom: 1px solid #e2db19;
+}
+
 .catcher {
     color: #fff;
     max-width: 100%;
@@ -375,10 +385,12 @@ nav {
 
 .catcher__link > a {
     color: #fff;
+    text-decoration: none;
 }
 
 .catcher__link > a:hover {
     color: #e2db19;
+    border-bottom: 1px solid #e2db19;
 }
 
 .lucky-meal {
@@ -616,9 +628,9 @@ nav {
 }
 
 .box--dark a:hover {
-    color: #ccc;
+    color: #e2db19;
     text-decoration: none;
-    border-bottom: 1px solid #ccc;
+    border-bottom: 1px solid #e2db19;
 }
 
 .fa-sm {
