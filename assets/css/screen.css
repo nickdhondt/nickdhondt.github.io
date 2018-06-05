@@ -518,6 +518,7 @@ nav {
 
 .social > a {
     color: #fff;
+    box-shadow: none;
 }
 
 .social > a:hover {
